@@ -30,10 +30,10 @@ const results = document.getElementById('results')
 
 
 // IMG
-const imgResult = document.getElementById('img-results')
-
-
-
+const img = document.getElementById('img-result')
+img.style.display = 'flex'
+img.style.width = '40%'
+img.style.height = 'auto'
 /************** Variables **************/
 
 
@@ -62,7 +62,7 @@ function game(number) {
             results.textContent = 'Fini. Vous n\'avez plus d\'essai' + ' le nombre était ' + n + '.'
 
         //On génère un GIF
-        imgResult.setAttribute('src', 'zenitsu.gif')
+        img.setAttribute ('src', 'zenitsu.gif')
 
         // Regénère un nouveau nombre à deviner
         n = Math.floor(Math.random() * 99)
@@ -74,17 +74,15 @@ function game(number) {
 
         // Résultat avec Réponse
     else if (number < n) results.textContent = "Perdu. Le nombre est plus grand.",
-        imgResult.setAttribute('src', '')
+     img.setAttribute('src', '')
     else if (number > n) results.textContent = " Perdu. Le nombre est plus petit.",
-        imgResult.setAttribute('src', '')
+        img.setAttribute('src', '')
     else if (number == n) results.textContent = "Gagné. Vous avez trouvez le bon numéro !",
         n = Math.floor(Math.random() * 99),
         //On relance à 0
-        essai = 0,
+        essai = -1,
         //On génère un GIF
-        imgResult.setAttribute('src', 'allmight.gif')
-
-
+        img.setAttribute ('src', 'allmight.gif')
 
     //Résultat avec nb Essai
     // else if (i < 1) results.textContent = "Perdu. Vous n'avez plus d'essai restant."

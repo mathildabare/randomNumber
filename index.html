@@ -11,24 +11,36 @@
     <script src="https://kit.fontawesome.com/a0d8d6503a.js" crossorigin="anonymous"></script>
 
 </head>
+<style>
+    .bg-lightgrey {
+        background-color: lightgrey;
+    }
+
+</style>
+
 <body>
-    <section class="minigame">
+    <section class="minigame bg-lightgrey py-4">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
 
                     <h1>Random Number Challenge</h1>
                     <input id="input" placeholder="Entrez un numéro" class="form-control" type="number">
-                    <button id="btnCheck"> OK</button>
+                    <button class="my-2" id="btnCheck"> OK</button>
                     <div class="text-center" id="results"></div>
 
-                </div>
-                <div class="col-md-12">
-                    <img id="img-results" class="img-results" width="50%" height="auto" alt="">
                 </div>
             </div>
         </div>
     </section>
+    <section class="img-section">
+        <div class="container">
+            <div class="col-md-12">
+                <img id="img-result" alt="">
+            </div>
+        </div>
+    </section>
+
 
 
 
