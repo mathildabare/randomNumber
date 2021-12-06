@@ -40,7 +40,7 @@ img.style.height = 'auto'
 // Nombre à deviner
 // let n = 65
 let n = Math.floor(Math.random() * 99)
-n !==0
+n !== 0
 
 
 
@@ -59,22 +59,25 @@ function game(number) {
 
     if (essai > maxTry) {
         console.log('Fini. Vous n\'avez plus d\'essai' + ' le nombre était ' + n + '.'),
-            results.textContent = 'Fini. Vous n\'avez plus d\'essai' + ' le nombre était ' + n + '.'
+            results.textContent = 'Fini, vous n\'avez plus d\'essai.' + ' Le nombre était ' + n + '.'
 
         //On génère un GIF
-        img.setAttribute ('src', 'zenitsu.gif')
+        img.setAttribute('src', 'zenitsu.gif')
+
+        //Retry
+        btnCheck.innerText = 'Retry'
 
         // Regénère un nouveau nombre à deviner
         n = Math.floor(Math.random() * 99)
-        n !==0
-        
+        n !== 0
+
         // On passe les essais à 0
         essai = -1
     }
 
-        // Résultat avec Réponse
+    // Résultat avec Réponse
     else if (number < n) results.textContent = "Perdu. Le nombre est plus grand.",
-     img.setAttribute('src', '')
+        img.setAttribute('src', '')
     else if (number > n) results.textContent = " Perdu. Le nombre est plus petit.",
         img.setAttribute('src', '')
     else if (number == n) results.textContent = "Gagné. Vous avez trouvez le bon numéro !",
@@ -82,8 +85,9 @@ function game(number) {
         //On relance à 0
         essai = -1,
         //On génère un GIF
-        img.setAttribute ('src', 'allmight.gif')
+        img.setAttribute('src', 'allmight.gif')
 
+        
     //Résultat avec nb Essai
     // else if (i < 1) results.textContent = "Perdu. Vous n'avez plus d'essai restant."
 
